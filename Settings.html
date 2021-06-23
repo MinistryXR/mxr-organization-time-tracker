@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" href="https://ministryxr.com/mxr_org_time_tracker/add-ons1.css">
+   <style>
+      #header {
+          width: 50%;
+          height: auto;
+      }
+
+      .red {
+         color: red;
+      }
+
+      .branding-below {
+         bottom: 56px;
+         top: 0;
+      }
+
+      input[type=number] {
+         width: 50px;
+         height: 15px;
+      }
+   </style>
+</head>
+
+<body>
+    
+    <div class="block" id="header"> 
+        <img src="https://ministryxr.com/mxr_org_time_tracker/header.png"/>
+    </div>
+    <div class="block" style="margin-left: 20px;">
+       <b>Synchronisation period</b>
+       <br>Synchronise from the last <input type="number" name="sync-from" id="sync-from"> days
+       <!-- <br>Synchronise up to the coming <input type="number" name="sync-to" id="sync-to"> days -->
+    </div>
+    <div class="block" style="float:right; margin-right: 20px;">
+         <button class="blue" onClick="saveSettings()" style="background:#2BA8E0;">Sync</button>
+    </div>
+    <div class="sidebar bottom">
+      <span class="gray">
+         MXR Organization Meeting Time Tracker v1.0</span>
+    </div>
+</body>
+<script>
+
+   // receiving the settings
+   const onSuccessGetSettings = (settings) => {
+      console.debug(settings);
+
+      document.getElementById('sync-from').value = settings.syncFrom || 31;
+      //document.getElementById('sync-to').value = settings.syncTo || 31;
+   }
+
+   // save the settings
+   const saveSettings = () => {
+
+      const settings = {};
+      settings.syncFrom = document.getElementById('sync-from').value;
+      //settings.syncTo = document.getElementById('sync-to').value;
+
+      google.script.run
+         .saveSettings(settings);
+   }
+
+   // get the initial settings
+   google.script.run
+      .getSettings();
+</script>
+
+</html>
