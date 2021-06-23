@@ -57,7 +57,8 @@ function GetCalendar(settings) {
   for(let i = 0; i < events.length; i++)
   {
     var meta_params = events[i].getTitle().split(":");
+    var meta_params2 = meta_params.split("-");
 
-  sheet.appendRow([meta_params[0], meta_params[1], meta_params[2], events[i].getStartTime(), events[i].getEndTime(), events[i].getCreators()[i], events[i].getDescription(), events[i].getGuestList().map((guest) => guest.getEmail()).join(','), events[i].getLocation(), events[i].isRecurringEvent()]);
+  sheet.appendRow([meta_params[0], meta_params2[0], meta_params2[1], events[i].getStartTime(), events[i].getEndTime(), events[i].getCreators()[i], events[i].getDescription(), events[i].getGuestList().map((guest) => guest.getEmail()).join(','), events[i].getLocation(), events[i].isRecurringEvent()]);
   }
 }
