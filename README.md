@@ -8,7 +8,7 @@ To add this to a Google Sheet, from the Google Sheet, go to Tools > Script Edito
 * Code.gs
 * Settings.html
 
-Save the Apps Script project, and refresh the Google Sheet. After a few seconds, a new menu item will appear called "MXR Organization Meeting Time Tracker".
+Save the Apps Script project, and refresh the Google Sheet. After a few seconds, a new menu item called "MXR Organization Meeting Time Tracker" will appear.
 
 ## Usage
 From the Google Sheet, go to MXR Organization Meeting Time Tracker > Settings.
