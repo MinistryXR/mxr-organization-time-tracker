@@ -13,7 +13,7 @@ Save the Apps Script project, and refresh the Google Sheet. After a few seconds,
 ## Usage
 From the Google Sheet, go to MXR Organization Meeting Time Tracker > Settings.
 
-From the Settings sidebar, enter the number of days prior to the current date from which to pull Ministry XR calendar events.
+From the Settings sidebar, enter the number of days prior to the current date from which to pull Ministry XR calendar events, and click "Sync".
 
 Relevant details about each event will start to populate the sheet.
 
